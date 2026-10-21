@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personal Website</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="custom-cursor" id="cursor"></div>
+<div class="spotlight" id="spot"></div>
+<div class="progress" id="progress"></div>
+<div class="timer" id="timer">Round 0:00</div>
+
+<header class="nav">
+  <button class="logo" id="logo" aria-label="Back to top"></button>
+  <nav aria-label="Sections">
+    <a href="#hobbies">Hobbies</a>
+    <a href="#skills">Abilities</a>
+    <a href="#game">Games</a>
+    <a href="#random">Random</a>
+  </nav>
+  <button class="icon-btn" id="themeBtn" aria-label="Switch to light mode">☀️</button>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div>
+      <p class="hello">Hi, I'm</p>
+      <h1 id="name" class="glitch-text" data-text="Angel Rose Gabison"></h1>
+      <p class="type" aria-live="off"><span id="typed"></span><span class="caret"></span></p>
+      <p class="lead" id="bio"></p>
+      <div class="cta">
+        <a class="btn" href="#game">Play my games</a>
+        <a class="btn ghost" href="#hobbies">See what I love</a>
+      </div>
+      <p class="hint">Hover my name. Click anywhere to land a hit ✕</p>
+    </div>
+    <div class="photo-col">
+      <span class="orbit"></span>
+      <p class="bubble" id="bubble" aria-live="polite"></p>
+      
+      <div class="photo-wrap" id="photoWrap" role="button" tabindex="0" aria-label="Say hi to Angel Rose">
+        <div class="glare"></div>
+        <img id="photo" src="rose.jpg.jpg" alt="Photo of Angel Rose">
+      </div>
+
+      <span class="sticker s1">🎮</span>
+      <span class="sticker s2">🎵</span>
+      <span class="sticker s3">🍜</span>
+      <p class="photo-hint">Click my photo. Drag the stickers.</p>
+    </div>
+  </section>
+
+  <ul class="chips" id="facts"></ul>
+
+  <section id="hobbies">
+    <h2>Things I love</h2>
+    <p class="sub">Tap a card to flip it.</p>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section id="skills">
+    <h2>Abilities</h2>
+    <p class="sub">What I can do. Tap one, or press Q, E, C or X.</p>
+    <div class="skillgrid" id="skillGrid"></div>
+    <div class="skilldetail" id="skillDetail" aria-live="polite"></div>
+
+    <div class="lab">
+      <h3>Design lab</h3>
+      <p class="sub">Build a button. Watch the CSS change as you go.</p>
+      <div class="labgrid">
+        <div class="controls">
+          <label>Label <input id="labText" value="Click me" maxlength="16"></label>
+          <label>Roundness <input id="labRad" type="range" min="0" max="40" value="0"></label>
+          <label>Text size <input id="labSize" type="range" min="14" max="28" value="18"></label>
+          <div class="swatches" id="swatches"></div>
+        </div>
+        <div class="preview">
+          <button id="labBtn" class="btn">Click me</button>
+          <pre id="labCss"></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="game">
+    <h2>Game modes</h2>
+    <p class="sub">Pick a mode. Beat my scores.</p>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" data-tab="truth" aria-selected="true">Spot the lie</button>
+      <button class="tab" role="tab" data-tab="memory" aria-selected="false">Memory match</button>
+      <button class="tab" role="tab" data-tab="quiz" aria-selected="false">Know me?</button>
+      <button class="tab" role="tab" data-tab="tap" aria-selected="false">Aim trainer</button>
+    </div>
+
+    <div data-panel="truth">
+      <p class="sub">One of these is fake. Pick the lie.</p>
+      <div id="stmts"></div>
+      <p class="result" id="result" aria-live="polite"></p>
+      <button class="btn ghost" id="again" hidden>Play again</button>
+    </div>
+
+    <div data-panel="memory" hidden>
+      <p class="sub" id="memInfo">Moves: 0</p>
+      <div class="mem" id="mem"></div>
+      <button class="btn ghost" id="memReset">Shuffle again</button>
+    </div>
+
+    <div data-panel="quiz" hidden>
+      <div id="quiz"></div>
+    </div>
+
+    <div data-panel="tap" hidden>
+      <p class="sub" id="tapInfo">Hit as many targets as you can in 10 seconds.</p>
+      <div class="arena" id="arena"><p class="result">Press Start when you're ready.</p></div>
+      <button class="btn" id="tapStart">Start</button>
+    </div>
+  </section>
+
+  <section id="random">
+    <h2>Tell me something random</h2>
+    <p class="sub">Pick a type. Every tap gives you a new one.</p>
+    <div class="cta">
+      <button class="btn ghost" data-kind="fun" aria-pressed="false">Fun fact</button>
+      <button class="btn ghost" data-kind="wyr" aria-pressed="false">Would you rather</button>
+      <button class="btn ghost" data-kind="me" aria-pressed="false">About me</button>
+    </div>
+    <div class="factbox" id="fact" aria-live="polite">Tap a button to get your first one.</div>
+  </section>
+</main>
+
+<footer><p>Made by <span id="footName"></span> for HCI</p></footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
